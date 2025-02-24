@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Todo from "./components/Todo";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -23,6 +24,7 @@ const App = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
+    <>
     <div>
       <h2>Todo List</h2>
       <ul>
@@ -33,6 +35,11 @@ const App = () => {
         ))}
       </ul>
     </div>
+
+    <div>
+        <Todo />
+    </div>
+    </>
   );
 };
 
