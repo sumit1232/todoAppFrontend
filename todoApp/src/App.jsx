@@ -25,18 +25,7 @@ const App = () => {
 
   return (
     <>
-    <div>
-      <h2>Todo List</h2>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo._id}>
-            {todo.task} - {todo.completed ? "✅" : "❌"}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div>
+    <div className="center">
         <Todo />
     </div>
     </>

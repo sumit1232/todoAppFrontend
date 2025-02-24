@@ -35,29 +35,49 @@ const Todo = () => {
     };
 
     return (
-        <div>
-            <h1>To-Do List</h1>
-            <input
-                type="text"
-                value={task}
-                onChange={(e) => setTask(e.target.value)}
-                placeholder="Add a new todo"
-            />
-            <button onClick={addTodo}>Add</button>
-            <ul>
-                {todos.map(todo => (
-                    <li key={todo._id}>
-                        <span
-                            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-                            onClick={() => toggleComplete(todo._id)}
-                        >
-                            {todo.task}
-                        </span>
-                        <button onClick={() => deleteTodo(todo._id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <>
+        
+
+
+
+            <div class="container">
+                <h1>To-Do List</h1>
+
+                <hr />
+
+                <div class="input-container">
+                    <input
+                        type="text"
+                        value={task}
+                        onChange={(e) => setTask(e.target.value)}
+                        placeholder="Add a new todo"
+                    />
+                    <button onClick={addTodo}>Add</button>
+
+                </div>
+
+                <div class="taskContainer">
+                    <div class="taskList" id="taskList">
+                        <ul>
+                            {todos.map(todo => (
+                                <li key={todo._id}>
+                                    <span
+                                        style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+                                        onClick={() => toggleComplete(todo._id)}
+                                    >
+                                        {todo.task}
+                                    </span>
+                                    <button onClick={() => deleteTodo(todo._id)} className='cust_button'>Delete</button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="effect"></div>
+                </div>
+
+            </div>
+        </>
+
     );
 };
 
